@@ -4,47 +4,80 @@
 
 html {
   font-family: sans-serif;
+  background: black;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  text-align: center;
 }
-
+#Projecttitle {
+  font-size: 2.35rem;
+  position: relative;
+  transform: scale(1, 1) skewX(-10deg);
+}
+#Projecttitle:before {
+  position: absolute;
+  content: "";
+  height: 3rem;
+  width: 24rem;
+  z-index: -1;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  box-shadow: 1px 10px 8px #39b38462;
+}
 label,
 input,
 textarea {
   display: block;
-  margin: 0.5rem 0;
+  margin: 0.9rem auto;
+  color: white;
+  font-size: 1.35rem;
 }
 
 label {
+  text-align: center;
   font-weight: bold;
+  margin: 0.5rem auto;
 }
 
 input,
 textarea {
   font: inherit;
-  padding: 0.2rem 0.4rem;
-  width: 100%;
+  padding: 0.5rem 0.4rem;
+  width: 80%;
   max-width: 30rem;
+  background-color: black;
   border: 1px solid #ccc;
 }
-
+/* textarea#description {
+  margin: 0.9rem auto;
+} */
 input:focus,
 textarea:focus {
   outline: none;
-  background: #fff5f9;
+  background: black;
+}
+
+#user-input {
+  margin: 2.5rem auto;
+  margin-bottom: 3.5rem;
+  padding: 1rem;
+  width: 70%;
+  border: 1px solid #ff0062;
+  background: black;
+  text-align: center;
 }
 
 button {
   font: inherit;
   background: #ff0062;
   border: 1px solid #ff0062;
+  border-radius: 3px;
   cursor: pointer;
   color: white;
   padding: 0.75rem 1rem;
 }
-
 button:focus {
   outline: none;
 }
@@ -57,12 +90,14 @@ button:active {
 
 .projects {
   margin: 1rem;
+  border-radius: 5px 5px 0px 0px;
   border: 1px solid #ff0062;
 }
 
 .projects header {
   background: #ff0062;
-  height: 3.5rem;
+  height: 2.9rem;
+  border-radius: 5px 5px 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,9 +123,10 @@ button:active {
 }
 
 .projects li {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 1px 8px rgba(113, 111, 114, 0.26);
   padding: 1rem;
   margin: 1rem;
+  background-color: black;
 }
 
 .projects li h2 {
@@ -107,21 +143,34 @@ button:active {
   font-size: 1rem;
 }
 
-.project li p {
+.projects li p {
   margin: 0;
+  color: #fffffffb;
 }
 
 .droppable {
-  background: #ffe3ee;
+  background: black;
 }
 
 #finished-projects .droppable {
-  background: #d6e1ff;
+  background: black;
 }
 
-#user-input {
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid #ff0062;
-  background: #f7f7f7;
+#finished-projects,
+#active-projects {
+  width: 78%;
+  margin: 0.9rem auto;
+  text-align: left;
+}
+#active-projects {
+  margin-bottom: 3rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
